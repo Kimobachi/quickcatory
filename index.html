@@ -24,7 +24,7 @@
       }
       /* The actual popup */
       
-      .popup .popuptext {
+      .popup .popupstuff {
         visibility: hidden;
         width: 160px;
         background-color: #555;
@@ -40,7 +40,7 @@
       }
       /* Popup arrow */
       
-      .popup .popuptext::after {
+      .popup .popupstuff::after {
         content: "";
         position: absolute;
         top: 100%;
@@ -86,13 +86,11 @@
 
     <body style="text-align:center">
 
-
-
       <canvas id="QuickInventory" width="900" height="1300"> </canvas>
       <p>
 
         <div class="popup" onclick="myFunction()"><b>Need Help? Click Here!</b>
-          <span class="popuptext" id="myPopup">abcdef</span>
+          <span class="popupstuff" id="myPopup"><img src="https://pbs.twimg.com/profile_images/458794430200152064/XdQULww6_400x400.png"></span>
         </div>
 
     </body>
