@@ -2,32 +2,6 @@
     var canvas = document.getElementById('QuickInventory');
     var context = canvas.getContext('2d');
     var myElement = document.getElementById('myElement');
-  
-  // Hammer Time
-  $(function(){
-		var upEvent = window.PointerEvent ? "pointerup" : ( ( 'ontouchstart' in window ) || window.DocumentTouch && document instanceof DocumentTouch ) ? "touchend" : "mouseup";
-		$( ".target" ).on( upEvent, function( e ) {
-			this.startTime = Date.now();
-			$( this ).find( ".output" ).html( e.type + ": " + this.startTime + "<br>");
-		} );
-		$( ".target" ).on( "click", function( e ) {
-			var now = Date.now();
-			var clickTime = now - this.startTime;
-			var target = $( this );
-			var status = clickTime < 100 ? "" : clickTime < 300 ? "warning" : "failure"
-			target.find( ".click-gauge" )
-				.attr( "value", clickTime )
-				.removeClass( "failure success" )
-				.addClass( status );
-			target.find( ".click-time-output" ).text( clickTime + "ms" );
-			target.find( ".output" ).append( "click: " + now + "<br>");
-			$( this ).addClass( "clicked" );
-			setTimeout( function() {
-				$( this ).removeClass( "clicked" );
-			}.bind( this ), 1000 )
-		} );
-	});
-} );
 
     // Warn if overriding existing method
     if(Array.prototype.equals)
