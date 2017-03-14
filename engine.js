@@ -207,3 +207,15 @@
 
     setInterval(game_loop, 30);
 });
+
+var ctx = $('canvas').get(0).getContext('2d');
+
+$('canvas').mousedown(function(e) {
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+});
+
+$('canvas').mouseup(function(e) {
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+});
